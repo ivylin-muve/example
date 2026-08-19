@@ -934,6 +934,13 @@
 
         <!-- TAB 3: SALARY CALCULATOR VIEW -->
         <div id="view-calculator" class="hidden w-full max-w-4xl bg-white rounded-3xl p-6 md:p-8 shadow-2xl border border-slate-200">
+            
+            <!-- 🌟 新增：頂部去識別化聲明警語 -->
+            <div class="bg-amber-50 border border-amber-200 text-amber-900 px-4 py-3 rounded-2xl mb-6 text-xs font-bold flex items-center gap-2.5 shadow-sm">
+                <i class="fa-solid fa-user-shield text-amber-600 text-base flex-shrink-0 animate-pulse"></i>
+                <span><strong>履歷作品展示說明：</strong>本頁面為去識別化展示版本，所有薪資金額均已遮罩處理（顯示為 OO），故調整滑桿或切換職等時僅呈現視覺結構比例與保級狀態變動，無實際金額數字變更。</span>
+            </div>
+
             <div class="flex flex-col md:flex-row justify-between items-start md:items-center border-b pb-5 mb-6 gap-3">
                 <div>
                     <h2 class="text-2xl font-black text-mumu-blue flex items-center gap-2">
@@ -942,7 +949,7 @@
                     </h2>
                     <p class="text-sm text-slate-500 font-bold mt-1">請在下方選擇師資等級並滑動完課堂數，即可即時呈現全年與每堂結算細項！</p>
                 </div>
-                <span class="bg-teal-50 text-mumu-blue font-bold px-3 py-1.5 rounded-lg text-xs border border-teal-150">即時算．免公式</span>
+                <span class="bg-amber-100 text-amber-900 font-extrabold px-3 py-1.5 rounded-lg text-xs border border-amber-200">去識別化展示模組</span>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
@@ -1082,9 +1089,10 @@
                         </div>
                     </div>
 
+                    <!-- 🌟 底部去識別化說明警語 -->
                     <p class="text-[11px] text-slate-400 italic mt-4 leading-relaxed font-medium">
-                        <i class="fa-solid fa-circle-exclamation mr-1 text-slate-500"></i><strong>計薪提醒：</strong>
-                        每年 12 月 31 日進行年度總結。未滿 10 堂之餘數，亦將依比例全額發清，隔年 1 月重新起算累計堂數。
+                        <i class="fa-solid fa-circle-exclamation mr-1 text-slate-500"></i><strong>去識別化展示說明：</strong>
+                        本試算器僅為前端互動介面與運算邏輯之作品集展示，所有金額均已遮罩為 OO 處理，不呈現實際金額變動。
                     </p>
                 </div>
             </div>
@@ -1430,7 +1438,6 @@
             document.getElementById('calc-input-number').value = sessions;
             document.getElementById('calc-slider').value = sessions;
 
-            // 實體金額全面去識別化，呈現遮罩字串
             if (sessions === 0) {
                 document.getElementById('result-base').innerText = "0";
                 document.getElementById('result-bonus').innerText = "0";
